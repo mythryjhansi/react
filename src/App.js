@@ -1,14 +1,25 @@
 
+import HookRef from "./HookRef";
 
-import FetchTest from "./FetchTest";
-import StateHook from "./StateHook";
-import Todo from "./Todo";
+import { useState } from "react";
+import HookuseEffect from "./HookuseEffect";
+import FirstState from "./FirstState";
 export default function App() {
+
+  const [name, setName] = useState('');
+
+
 
   return (
     <>
+      FirstName:<input type="text" value={name} onChange={(e) => setName(e.target.value)}></input>
 
-      <StateHook />
+      <br />
+
+      <FirstState />
+
+
+
 
     </>
 

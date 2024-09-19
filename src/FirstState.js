@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 function FirstState() {
 
@@ -6,13 +6,24 @@ function FirstState() {
 
     const handleClick = () => {
         setCount(count + 1)
+
+
+        // input.current.focus();
     }
+
+    const squareCount = () => {
+        console.log('am in squareCount')
+        return count * 2;
+    }
+
+    const doubleValue = useMemo(() => squareCount(), [count]);
 
     return (
 
         <>
-            <p>Count :{count}</p>
-            <button onClick={() => setCount(count + 1)}>Add</button>
+            <br />
+            {doubleValue}
+            <br />
             <button onClick={handleClick}>Add</button>
         </>
 

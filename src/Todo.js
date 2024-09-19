@@ -1,33 +1,29 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
-function Todo() {
+const Todo = () => {
+    const [count, setCount] = useState(0);
+    const [input, setInput] = useState('');
 
-    const [itemData, setItemData] = useState('');
-    const [data, setData] = useState([]);
+    const expensiveCalculation = (num) => {
+        console.log('Calculating...');
+        return num * 2;
+    };
 
-    const handleChange = (e) => {
-
-        setItemData(e.target.value)
-
-
-    }
-    const handleAdd = () => {
-        setData([...data, itemData]);
-
-    }
+    const calculatedValue = expensiveCalculation(count);
 
     return (
-        <>
-            <input value={itemData} type="text" onChange={handleChange} />
-
-            <button onClick={handleAdd}>AddItem</button>
-
-            <ul>
-                {data.map((item) => <li>{item}</li>)}
-            </ul>
-        </>
-
+        <div>
+            <h1>Count: {count}</h1>
+            <h2>Expensive Calculation Result: {calculatedValue}</h2>
+            <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Type something..."
+            />
+            <button onClick={() => setCount(count + 1)}>Increment Count</button>
+        </div>
     );
-}
+};
 
 export default Todo;

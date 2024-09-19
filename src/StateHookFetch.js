@@ -19,7 +19,9 @@ function StartHookFetch() {
         setLoading(false);
 
     }
-
+    useEffect(() => {
+        fetchData();
+    })
 
     return (<>
 
@@ -30,7 +32,7 @@ function StartHookFetch() {
                 }
             </ul>
         }
-        <button onClick={fetchData}>Fetch</button>
+        <button>Fetch</button>
     </>);
 }
 
