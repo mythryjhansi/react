@@ -27,3 +27,13 @@
 .App-link {
   color: #61dafb;
 }
+
+.light-theme {
+  background-color: aliceblue;
+  color: black;
+}
+
+.dark-theme {
+  background-color: black;
+  color: aliceblue;
+}
