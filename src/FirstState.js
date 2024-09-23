@@ -16,6 +16,7 @@ function FirstState() {
         return count * 2;
     }
 
+
     const doubleValue = useMemo(() => squareCount(), [count]);
 
     return (

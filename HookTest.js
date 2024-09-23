@@ -7,16 +7,18 @@ export default function HookTest() {
 
     //runs only on initial render
     useEffect(() => {
-        console.log('initial render')
+        document.title = "Hello";
     }, []);
 
     useEffect(() => {
-        console.log('rendered again')
+        //always runs
     });
 
     //with dependencies
     useEffect(() => {
-        console.log('rendered again with count');
+        if (count > 5) {
+            alert(1)
+        }
     }, [count]);
 
 
